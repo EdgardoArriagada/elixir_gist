@@ -1,0 +1,17 @@
+services:
+  bs_db:
+    image: postgres
+    container_name: bs_db
+    restart: always
+    environment:
+      POSTGRES_DB: elixir_gist_dev
+      POSTGRES_USER: backend_stuff
+      POSTGRES_PASSWORD: blork_erlang
+      # connect using: postgresql://backend_stuff:blork_erlang@localhost:5432/postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:
