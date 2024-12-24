@@ -1,6 +1,6 @@
 ```text
 mix phx.gen.context \
-Context Schema table_name \
+ContextFile SchemaName table_name \
 row1 \
 row2 \
 ```
@@ -18,4 +18,12 @@ mix phx.gen.context \
 Gists SavedGist saved_gists \
 user_id:references:users \
 gist_id:references:gists \
+```
+
+```sh
+mix phx.gen.context \
+Comments Comment comments \
+user_id:references:user \
+gist_id:references:gists \
+markup_text:text \
 ```
