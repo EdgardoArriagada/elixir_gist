@@ -26,14 +26,14 @@
     </button>
     <div
       id="dropdown-menu"
-      class="bg-emDark absolute right-0 mt-2 w-48 rounded-lg border-white py-2 shadow-xl"
+      class="bg-emDark absolute right-0 mt-2 w-48 rounded-lg border border-white py-2 shadow-xl"
     >
       <%= if @current_user do %>
         Sign out
       <% else %>
         <.link
           href={~p"/users/log_in"}
-          class="menu-item"
+          class="menu-item border-b border-white border-opacity-50"
           role="menuitem"
           tabindex="-1"
           method="get"
