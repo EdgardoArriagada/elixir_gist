@@ -24,5 +24,15 @@
     <button id="user-menu-button" class="img-down-arrow" type="button">
       <img src="/images/user-image.svg" alt="Profile Image" class="round-image-padding h-8 w-8" />
     </button>
+    <div
+      id="dropdown-menu"
+      class="bg-emDark absolute right-0 mt-2 w-48 rounded-lg border-white py-2 shadow-xl"
+    >
+      {if @current_user do
+        "Sign out"
+      else
+        "Sign in"
+      end}
+    </div>
   </div>
 </header>
