@@ -28,11 +28,20 @@
       id="dropdown-menu"
       class="bg-emDark absolute right-0 mt-2 w-48 rounded-lg border-white py-2 shadow-xl"
     >
-      {if @current_user do
-        "Sign out"
-      else
-        "Sign in"
-      end}
+      <%= if @current_user do %>
+        Sign out
+      <% else %>
+        <.link
+          href={~p"/users/log_in"}
+          class=""
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-0"
+        >
+          Sign in
+        </.link>
+      <% end %>
     </div>
   </div>
 </header>
