@@ -29,7 +29,49 @@
       class="bg-emDark absolute right-0 mt-2 w-48 rounded-lg border border-white py-2 shadow-xl"
     >
       <%= if @current_user do %>
-        Sign out
+        <.link
+          href={~p"/users/settings"}
+          class="menu-item border-b border-white border-opacity-50"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-0"
+        >
+          Sign in as {@current_user.email}
+        </.link>
+
+        <.link
+          href="#"
+          class="menu-item "
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-1"
+        >
+          Your gists
+        </.link>
+
+        <.link
+          href="#"
+          class="menu-item border-b border-white border-opacity-50"
+          role="menuitem"
+          tabindex="-1"
+          method="get"
+          id="user-menu-item-2"
+        >
+          Saved gists
+        </.link>
+
+        <.link
+          href={~p"/users/log_out"}
+          class="menu-item "
+          role="menuitem"
+          tabindex="-1"
+          method="delete"
+          id="user-menu-item-3"
+        >
+          Sign out
+        </.link>
       <% else %>
         <.link
           href={~p"/users/log_in"}
