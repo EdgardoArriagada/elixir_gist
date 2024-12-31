@@ -3,8 +3,8 @@
     Instantly share Elixir code, notes, and snippets.
   </h1>
 </div>
-<.form for={@form}>
-  <div class="mb-10 w-full justify-center space-y-4 px-28">
+<.form for={@form} class="flex justify-center">
+  <div class="flex w-4/5 flex-col gap-8">
     <.input field={@form[:description]} placeholder="Gist description..." autocomplete="off" />
     <div>
       <div class="bg-emDark flex items-center rounded-t-md border p-2">
@@ -20,7 +20,7 @@
       <.input
         field={@form[:markup_text]}
         placeholder="Insert code ..."
-        class="textarea w-full rounded-b-md"
+        class="textarea"
         autocomplete="off"
         spellchkeck="false"
         type="textarea"
