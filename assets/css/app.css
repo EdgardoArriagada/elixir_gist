@@ -17,6 +17,14 @@
   font-style: normal;
 }
 
+form input[type="text"] {
+  @apply bg-emDark-dark font-brand font-regular text-white text-sm boder border-white
+}
+
+form input[type="text"]:focus {
+  @apply focus:outline-none focus:border-emLavender focus:ring-0
+}
+
 .em-gradient {
   background-image: linear-gradient(to bottom, #631A61, #551653, #340E33, #010101);
   height: 225px;

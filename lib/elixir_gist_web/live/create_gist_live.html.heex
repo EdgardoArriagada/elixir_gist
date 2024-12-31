@@ -3,4 +3,11 @@
     Instantly share Elixir code, notes, and snippets.
   </h1>
 </div>
-<.form></.form>
+<.form for={@form}>
+  <div class="mb-10 w-full justify-center space-y-4 px-28">
+    <.input field={@form[:description]} placeholder="Gist description..." autocomplete="off" />
+    <div>
+      <div class="bg-emDark flex items-center rounded-t-md border p-2"></div>
+    </div>
+  </div>
+</.form>
