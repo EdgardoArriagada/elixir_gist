@@ -7,7 +7,15 @@
   <div class="mb-10 w-full justify-center space-y-4 px-28">
     <.input field={@form[:description]} placeholder="Gist description..." autocomplete="off" />
     <div>
-      <div class="bg-emDark flex items-center rounded-t-md border p-2"></div>
+      <div class="bg-emDark flex items-center rounded-t-md border p-2">
+        <div class="w-[300px] mb-2">
+          <.input
+            field={@form[:name]}
+            placeholder="Filename including extension..."
+            autocomplete="off"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </.form>
