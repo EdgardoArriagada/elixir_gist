@@ -23,15 +23,21 @@
         </div>
       </div>
 
-      <.input
-        field={@form[:markup_text]}
-        placeholder="Insert code..."
-        class="textarea"
-        autocomplete="off"
-        spellcheck="false"
-        type="textarea"
-        phx-debounce="blur"
-      />
+      <div class="flex">
+        <textarea class="line-numbers w-8 rounded-bl-md" id="line-numbers" readonly>
+          {"1\n"}
+        </textarea>
+        <.input
+          container_class="flex-grow"
+          field={@form[:markup_text]}
+          placeholder="Insert code..."
+          class="textarea"
+          autocomplete="off"
+          spellcheck="false"
+          type="textarea"
+          phx-debounce="blur"
+        />
+      </div>
 
       <div class="flex justify-end">
         <.button class="primary-button" phx-disable-with="Creating...">Create gist</.button>
