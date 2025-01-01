@@ -30,6 +30,10 @@ form input[type="text"]:focus {
   border-top: none;
 }
 
+.textarea:focus {
+  @apply focus:outline-none focus:border-white focus:ring-0;
+}
+
 .em-gradient {
   background-image: linear-gradient(to bottom, #631A61, #551653, #340E33, #010101);
   height: 225px;
