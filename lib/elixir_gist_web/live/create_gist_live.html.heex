@@ -5,7 +5,12 @@
 </div>
 <.form for={@form} class="flex justify-center" phx-submit="create" phx-change="validate">
   <div class="flex w-4/5 flex-col gap-8">
-    <.input field={@form[:description]} placeholder="Gist description..." autocomplete="off" />
+    <.input
+      field={@form[:description]}
+      placeholder="Gist description..."
+      autocomplete="off"
+      phx-debounce="blur"
+    />
     <div>
       <div class="bg-emDark flex items-center rounded-t-md border p-2">
         <div class="w-[300px] mb-2">
@@ -13,6 +18,7 @@
             field={@form[:name]}
             placeholder="Filename including extension..."
             autocomplete="off"
+            phx-debounce="blur"
           />
         </div>
       </div>
@@ -24,6 +30,7 @@
         autocomplete="off"
         spellcheck="false"
         type="textarea"
+        phx-debounce="blur"
       />
 
       <div class="flex justify-end">
