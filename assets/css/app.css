@@ -26,7 +26,7 @@ form input[type="text"]:focus {
 }
 
 .textarea {
-  @apply bg-emDark-dark font-brand w-full font-regular text-white text-xs border border-white h-[300px] resize-none rounded-br-md;
+  @apply bg-emDark-dark font-brand w-full font-regular text-white text-xs border border-white h-[300px] resize-none rounded-br-md pt-6;
   border-top: none;
   border-left: none;
 }
