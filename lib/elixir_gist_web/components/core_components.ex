@@ -287,6 +287,10 @@ defmodule ElixirGistWeb.CoreComponents do
   attr :options, :list, doc: "the options to pass to Phoenix.HTML.Form.options_for_select/2"
   attr :multiple, :boolean, default: false, doc: "the multiple flag for select inputs"
 
+  attr :container_class, :string,
+    default: nil,
+    doc: "the CSS classes to apply to the container div"
+
   attr :rest, :global,
     include: ~w(accept autocomplete capture cols disabled form list max maxlength min minlength
                 multiple pattern placeholder readonly required rows size step)
@@ -309,7 +313,7 @@ defmodule ElixirGistWeb.CoreComponents do
       end)
 
     ~H"""
-    <div>
+    <div class={@container_class}>
       <label class="flex items-center gap-4 text-sm leading-6 text-zinc-600">
         <input type="hidden" name={@name} value="false" disabled={@rest[:disabled]} />
         <input
@@ -349,7 +353,7 @@ defmodule ElixirGistWeb.CoreComponents do
 
   def input(%{type: "textarea"} = assigns) do
     ~H"""
-    <div>
+    <div class={@container_class}>
       <.label for={@id}>{@label}</.label>
       <textarea id={@id} name={@name} {@rest}>{Phoenix.HTML.Form.normalize_value("textarea", @value)}</textarea>
       <.error :for={msg <- @errors}>{msg}</.error>
