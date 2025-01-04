@@ -1,4 +1,16 @@
-<div id="highlight" class="bg-white" phx-hook="Highlight" data-name={@gist.name}>
+<div class="em-gradient flex flex-col items-center justify-center">
+  <div class="mb-10 flex w-full justify-between px-4">
+    <div class="ml-10 flex items-center">
+      <img
+        src="/images/user-image.svg"
+        alt="Profile Image"
+        class="round-image-padding size-8 mb-6"
+      />
+    </div>
+  </div>
+</div>
+
+<div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
   <pre>
     <code class="language-elixir">
       {@gist.markup_text}
