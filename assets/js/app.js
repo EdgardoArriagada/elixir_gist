@@ -56,7 +56,7 @@ Hooks.UpdateLineNumbers = {
     const lines = this.el.value.split("\n");
     const numbers = lines.map((_, i) => i + 1).join("\n") + "\n";
 
-    lineNumberText.value = ["\n"].concat(numbers);
+    lineNumberText.value = `\n${numbers}`;
   },
 };
 
