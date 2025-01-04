@@ -31,10 +31,33 @@ const Hooks = {};
 
 Hooks.Highlight = {
   mounted() {
+    const name = this.el.getAttribute("data-name");
     const codeblock = this.el.querySelector("pre code");
 
-    if (codeblock) {
+    if (name && codeblock) {
+      codeblock.className.replace(/language-\S+/g, "");
+      codeblock.classList.add(`language-${this.getSyntaxType(name)}`);
+
       hljs.highlightBlock(codeblock);
+    }
+  },
+
+  getSyntaxType(name) {
+    const extension = name.split(".").pop();
+    switch (extension) {
+      case "json":
+        return "json";
+      case "js":
+        return "javascript";
+      case "html":
+        return "html";
+      case "heex":
+        return "html";
+      case "ex":
+        return "elixir";
+
+      default:
+        return "text";
     }
   },
 };
