@@ -23,11 +23,18 @@
         </div>
       </div>
 
-      <div class="flex">
-        <textarea class="line-numbers w-8 rounded-bl-md" id="line-numbers" readonly>
+      <div id="gist-wrapper" class="flex" phx-update="ignore">
+        <textarea
+          id="line-numbers"
+          class="line-numbers w-12 rounded-bl-md"
+          id="line-numbers"
+          readonly
+        >
           {"1\n"}
         </textarea>
         <.input
+          id="gist-textarea"
+          phx-hook="UpdateLineNumbers"
           container_class="flex-grow"
           field={@form[:markup_text]}
           placeholder="Insert code..."

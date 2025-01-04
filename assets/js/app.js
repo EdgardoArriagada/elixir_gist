@@ -26,9 +26,33 @@ let csrfToken = document
   .querySelector("meta[name='csrf-token']")
   .getAttribute("content");
 
+const Hooks = {};
+
+Hooks.UpdateLineNumbers = {
+  mounted() {
+    this.el.addEventListener("input", () => {
+      this.updateLineNumbers();
+    });
+
+    this.updateLineNumbers();
+  },
+
+  updateLineNumbers() {
+    const lineNumberText = document.querySelector("#line-numbers");
+
+    if (!lineNumberText) return;
+
+    const lines = this.el.value.split("\n");
+    const numbers = lines.map((_, i) => i + 1).join("\n") + "\n";
+
+    lineNumberText.value = ["\n"].concat(numbers);
+  },
+};
+
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
   params: { _csrf_token: csrfToken },
+  hooks: Hooks,
 });
 
 // Show progress bar on live navigation and form submits
