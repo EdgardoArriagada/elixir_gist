@@ -29,6 +29,16 @@ let csrfToken = document
 
 const Hooks = {};
 
+Hooks.Highlight = {
+  mounted() {
+    const codeblock = this.el.querySelector("pre code");
+
+    if (codeblock) {
+      hljs.highlightBlock(codeblock);
+    }
+  },
+};
+
 Hooks.UpdateLineNumbers = {
   mounted() {
     const lineNumberText = document.querySelector("#line-numbers");
