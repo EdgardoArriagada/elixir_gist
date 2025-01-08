@@ -43,11 +43,15 @@
       </button>
     </div>
   </div>
-  <div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
-    <pre>
-      <code class="language-elixir">
-        {@gist.markup_text}
-      </code>
-    </pre>
+  <div id="gist-wrapper" class="flex w-full">
+    <textarea id="line-numbers" class="syntax-numbers rounded-bl-md" readonly></textarea>
   </div>
+</div>
+
+<div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
+  <pre>
+    <code class="language-elixir">
+      {@gist.markup_text}
+    </code>
+  </pre>
 </div>
