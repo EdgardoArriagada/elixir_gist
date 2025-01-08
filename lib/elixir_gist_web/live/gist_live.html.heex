@@ -26,10 +26,28 @@
   </div>
 </div>
 
-<div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
-  <pre>
-    <code class="language-elixir">
-      {@gist.markup_text}
-    </code>
-  </pre>
+<div class="mb-10 w-full justify-center px-28">
+  <div class="bg-emDark flex items-center justify-between rounded-t-md border p-2">
+    <div class="w-[300px] font-brand text-emLavender-dark pl-2 text-base font-bold">
+      {@gist.name}
+    </div>
+    <div>
+      <button class="px-1" type="button" phx-click={}>
+        <img src="/images/delete.svg" alt="Delete Button" />
+      </button>
+      <button class="px-1" type="button" phx-click={}>
+        <img src="/images/edit.svg" alt="Edit Button" />
+      </button>
+      <button class="px-1" type="button" phx-click={}>
+        <img src="/images/copy.svg" alt="Copy Button" />
+      </button>
+    </div>
+  </div>
+  <div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
+    <pre>
+      <code class="language-elixir">
+        {@gist.markup_text}
+      </code>
+    </pre>
+  </div>
 </div>
