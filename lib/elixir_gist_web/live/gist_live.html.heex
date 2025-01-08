@@ -45,13 +45,17 @@
   </div>
   <div id="gist-wrapper" class="flex w-full">
     <textarea id="line-numbers" class="syntax-numbers rounded-bl-md" readonly></textarea>
+    <div
+      id="highlight"
+      class="syntax-area w-full rounded-br-md"
+      phx-hook="Highlight"
+      data-name={@gist.name}
+    >
+      <pre>
+        <code class="language-elixir">
+          {@gist.markup_text}
+        </code>
+      </pre>
+    </div>
   </div>
-</div>
-
-<div id="highlight" phx-hook="Highlight" data-name={@gist.name}>
-  <pre>
-    <code class="language-elixir">
-      {@gist.markup_text}
-    </code>
-  </pre>
 </div>
