@@ -33,7 +33,12 @@
     </div>
     <div>
       <%= if @current_user.id == @gist.user_id do %>
-        <button class="interactive-img-btn px-1" type="button" phx-click={}>
+        <button
+          class="interactive-img-btn px-1"
+          type="button"
+          phx-click="delete"
+          phx-value-id={@gist.id}
+        >
           <img src="/images/delete.svg" alt="Delete Button" />
         </button>
         <button class="interactive-img-btn px-1" type="button" phx-click={}>
