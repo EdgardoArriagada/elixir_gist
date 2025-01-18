@@ -49,6 +49,8 @@ Hooks.Highlight = {
       codeblock.className.replace(/language-\S+/g, "");
       codeblock.classList.add(`language-${this.getSyntaxType(name)}`);
 
+      this.trimCodeblock(codeblock);
+
       hljs.highlightBlock(codeblock);
       updateLineNumbers(codeblock.textContent);
     }
@@ -71,6 +73,10 @@ Hooks.Highlight = {
       default:
         return "text";
     }
+  },
+
+  trimCodeblock(codeblock) {
+    codeblock.textContent = codeblock.textContent.trim();
   },
 };
 
