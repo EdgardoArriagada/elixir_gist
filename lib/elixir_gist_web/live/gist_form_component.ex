@@ -3,7 +3,7 @@ defmodule ElixirGistWeb.GistFormComponent do
 
   alias ElixirGist.{Gists, Gists.Gist}
 
-  def mount(_params, _session, socket) do
+  def mount(socket) do
     socket = assign(socket, form: to_form(Gists.change_gist(%Gist{})))
     {:ok, socket}
   end
@@ -34,7 +34,13 @@ defmodule ElixirGistWeb.GistFormComponent do
   def render(assigns) do
     ~H"""
     <div>
-      <.form for={@form} class="flex justify-center" phx-submit="create" phx-change="validate">
+      <.form
+        for={@form}
+        class="flex justify-center"
+        phx-submit="create"
+        phx-change="validate"
+        phx-target={@myself}
+      >
         <div class="flex w-4/5 flex-col gap-8">
           <.input
             field={@form[:description]}
